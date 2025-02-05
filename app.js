@@ -5,10 +5,11 @@ function agregarAmigo() {
     let nombresDeAmigos = document.getElementById("amigo").value;
     let lista = document.getElementById("listaAmigos");
     let nombreYaEnLista = nombres.find((x) => x === nombresDeAmigos)
-    console.log(nombreYaEnLista);
     if(nombresDeAmigos === "" || !isNaN(nombresDeAmigos) || nombresDeAmigos === " ") {
         alert("El Nombre no puede estar vacío o contener números.")
-    } else {
+    } else if (nombresDeAmigos.length < 3) {
+            alert("El nombre debe contener, al menos, 3 letras")
+        } else {
         if(nombresDeAmigos === nombreYaEnLista){
             alert("El nombre ya está en la lista.");
             limpiar();
@@ -21,8 +22,6 @@ function agregarAmigo() {
     }
     limpiar();
 }
-
-
 
 let limpiar = () => {
     document.getElementById("amigo").value = "";
@@ -39,5 +38,8 @@ function sortearAmigo() {
 }
 
 function resetGame() {
-    
+    limpiar();
+    document.getElementById("listaAmigos").innerHTML = "";
+    document.getElementById("resultado").innerHTML = "";
+    nombres = [];
 }
