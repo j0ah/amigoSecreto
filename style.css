@@ -88,7 +88,7 @@ body {
 }
 
 .button-container {
-    width: 300px;
+    width: 265px;
     justify-content: center;
 }
 
@@ -159,4 +159,12 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+.resetGame {
+    display: flex;
+    margin: 0 auto;
+    padding: 15px 40px;
+    margin-top: 10px;
+    background-color: #ff832d;
 }
