@@ -6,7 +6,7 @@ function agregarAmigo() {
     let lista = document.getElementById("listaAmigos");
     let nombreYaEnLista = nombres.find((x) => x === nombresDeAmigos)
     console.log(nombreYaEnLista);
-    if(nombresDeAmigos === "" || nombresDeAmigos === Number || nombresDeAmigos === " ") {
+    if(nombresDeAmigos === "" || !isNaN(nombresDeAmigos) || nombresDeAmigos === " ") {
         alert("El Nombre no puede estar vacío o contener números.")
     } else {
         if(nombresDeAmigos === nombreYaEnLista){
@@ -26,4 +26,18 @@ function agregarAmigo() {
 
 let limpiar = () => {
     document.getElementById("amigo").value = "";
+}
+
+function sortearAmigo() {
+    if (nombres.length === 0) {
+        alert("No se han ingresados nombres para sortear.")
+    } else {
+    let resultadoRandom = document.getElementById("resultado");
+    let amigoRandom = Math.floor(Math.random() * nombres.length);
+    resultadoRandom.innerHTML = `El amigo Secreto elegido es: ${nombres[amigoRandom]}`
+}
+}
+
+function resetGame() {
+    
 }
